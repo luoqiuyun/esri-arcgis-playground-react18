@@ -5,7 +5,7 @@ const BasemapSelector = () => {
 
   return (  
     <MapComponent
-      position="top-right"
+      position="top-left"
       expandable={true}
       expandProperties={{
         expandTooltip: "Basemap Gallery",
