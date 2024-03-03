@@ -1313,15 +1313,10 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.0.tgz#a5417ae8427873f1dd08b70b3574b453e67b5f7f"
   integrity sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==
 
-"@esri/react-arcgis@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@esri/react-arcgis/-/react-arcgis-4.0.0.tgz#afc58a33329c12bc7b363d7767f560ac83f09100"
-  integrity sha512-Svb/CDOEnqSEcDmN88uAxbJ664l/pLfJ0HOlQxbTpe3dFrCN9Ey+eBgBFdZojppKEDQjZYiS3Ok5soIyBozqyQ==
-  dependencies:
-    "@types/arcgis-js-api" "4.10.0"
-    esri-loader "2.6.0"
-    react "^16.5.2"
-    react-dom "^16.5.2"
+"@esri/react-arcgis@5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@esri/react-arcgis/-/react-arcgis-5.1.0.tgz#1d49380cb8f99a3968e0e72b83c0516a9273c213"
+  integrity sha512-4zXVx5DoJ5OFN+s1gp9sIWsTP307NlvT7meCsFe/lqPJfs239ztYNnEy6V9tMpPBIx+Lz5fTy47SS61VJM7ToQ==
 
 "@humanwhocodes/config-array@^0.11.14":
   version "0.11.14"
@@ -1856,11 +1851,6 @@
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
   integrity sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==
-
-"@types/arcgis-js-api@4.10.0":
-  version "4.10.0"
-  resolved "https://registry.yarnpkg.com/@types/arcgis-js-api/-/arcgis-js-api-4.10.0.tgz#0e702500904e473e57a2d6d4bdae179bf07fe676"
-  integrity sha512-r8Ax7+s0+VbUw+dwROFFmdhLTeKBwECWIQQecTGDRR9VY02m8qVH++gZio52p5Av7DJi7IaYrwY3U5eU2brkxA==
 
 "@types/arcgis-js-api@4.19.0":
   version "4.19.0"
@@ -3083,9 +3073,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001587, caniuse-lite@^1.0.30001591:
-  version "1.0.30001591"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001591.tgz#16745e50263edc9f395895a7cd468b9f3767cf33"
-  integrity sha512-PCzRMei/vXjJyL5mJtzNiUCKP59dm8Apqc3PH8gJkMnMXZGox93RbE76jHsmLwmIo6/3nsYIpJtx0O7u5PqFuQ==
+  version "1.0.30001593"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001593.tgz#7cda1d9e5b0cad6ebab4133b1f239d4ea44fe659"
+  integrity sha512-UWM1zlo3cZfkpBysd7AS+z+v007q9G1+fLTUU42rQnY6t2axoogPW/xol6T7juU5EUoOhML4WgBIdG+9yYqAjQ==
 
 case-sensitive-paths-webpack-plugin@^2.4.0:
   version "2.4.0"
@@ -4325,15 +4315,10 @@ esrecurse@^4.3.0:
   dependencies:
     estraverse "^5.2.0"
 
-esri-loader@2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/esri-loader/-/esri-loader-2.6.0.tgz#fc44cc8888161937e48346c4eb069433686fddc3"
-  integrity sha512-XY9ItlT6+5UVy0s5AS89YRVRKmMm7DqOD3f/jp/8Xxoapp6ffw79RbUnWFuM8qjYb1EewkjSwFMS+2ZAdkXzMA==
-
-esri-loader@^2.10.2:
-  version "2.16.0"
-  resolved "https://registry.yarnpkg.com/esri-loader/-/esri-loader-2.16.0.tgz#995c83f2ae93bdae0e64b36bb821d29dc56c039d"
-  integrity sha512-0lneVO6aizdRFt1mbrOsRgbF/F1v4LBUwKg+kfiBmoGJPf2ATFI/OimBlfeDI6J1rEQiWHi1PsALFCF4yRf2mw==
+esri-loader@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/esri-loader/-/esri-loader-3.1.0.tgz#0903879a5a31044638380aa67441224add42d14e"
+  integrity sha512-TwC9hDZxDWScXPt0nAz90aFJ10+X4Jh+cJTB2tbtWEzqibEEO50xLDkcQ0N+EHv9aRWRRxrSQssH+meqgM9sBg==
 
 estraverse@^4.1.1, estraverse@^4.2.0:
   version "4.3.0"
@@ -7507,7 +7492,7 @@ prompts@^2.0.1, prompts@^2.4.2:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.6.2, prop-types@^15.8.1:
+prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -7627,16 +7612,6 @@ react-dev-utils@^12.0.1:
     strip-ansi "^6.0.1"
     text-table "^0.2.0"
 
-react-dom@^16.5.2:
-  version "16.14.0"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.14.0.tgz#7ad838ec29a777fb3c75c3a190f661cf92ab8b89"
-  integrity sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.2"
-    scheduler "^0.19.1"
-
 react-dom@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
@@ -7724,15 +7699,6 @@ react-scripts@5.0.1:
     workbox-webpack-plugin "^6.4.1"
   optionalDependencies:
     fsevents "^2.3.2"
-
-react@^16.5.2:
-  version "16.14.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
-  integrity sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.2"
 
 react@^18.2.0:
   version "18.2.0"
@@ -8041,14 +8007,6 @@ saxes@^5.0.1:
   integrity sha512-5LBh1Tls8c9xgGjw3QrMwETmTMVk0oFgvrFSvWx62llR2hcEInrKNZ2GZCCuuy2lvWrdl5jhbpeqc5hRYKFOcw==
   dependencies:
     xmlchars "^2.2.0"
-
-scheduler@^0.19.1:
-  version "0.19.1"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.19.1.tgz#4f3e2ed2c1a7d65681f4c854fa8c5a1ccb40f196"
-  integrity sha512-n/zwRWRYSUj0/3g/otKDRPMh6qv2SYMWNq85IEa8iZyAv8od9zDYpGSnpBEjNgcMNq6Scbu5KfIPxNF72R/2EA==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
 
 scheduler@^0.23.0:
   version "0.23.0"
