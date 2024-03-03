@@ -6,6 +6,7 @@
   "main": "src/index.js",
   "dependencies": {
     "@esri/react-arcgis": "^4.0.0",
+    "@types/arcgis-js-api": "4.19.0",
     "esri-loader": "^2.10.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -15,7 +16,6 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/runtime": "7.13.8",
-    "@types/arcgis-js-api": "4.19.0",
     "@types/react": "^18.2.61",
     "typescript": "4.1.3"
   },

@@ -37,6 +37,15 @@ export default function App() {
             }}
           </MapContext.Consumer> */}
         </MapComponent>
+        <MapComponent
+          position="top-right"
+          expandable={true}
+          expandProperties={{
+            expandTooltip: "Print",
+            expandIconClass: "esri-icon-printer"
+          }}
+        >
+        </MapComponent>
       </Map>
     </div>
   );
