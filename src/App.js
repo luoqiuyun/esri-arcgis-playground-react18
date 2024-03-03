@@ -1,10 +1,13 @@
 import React from "react";
 import { setDefaultOptions } from "esri-loader";
 import "./styles.css";
-import { MapComponent, Widget } from "./Widget/Widgets";
-import { Map, MapContext } from "./Map";
+import { Map } from "./Map";
 import { GraphicsLayer } from "./Layers";
-import { options } from "./config";
+import MapContextButton from "./components/MapContextButton";
+import BasemapSelector from "./components/BasemapSelector";
+import SketchLayer from "./components/SketchLayer";
+import Search from "./components/Search";
+import Print from "./components/Print";
 setDefaultOptions({ css: true });
 
 export default function App() {
@@ -12,54 +15,11 @@ export default function App() {
     <div className="App">
       <Map portalUrl="https://kytc.maps.arcgis.com/" extent={{}}>
         <GraphicsLayer id="sketchLayer" />
-
-        <MapComponent position="top-right">
-          <Widget type="esri/widgets/Sketch" layer="sketchLayer" />
-        </MapComponent>
-        <MapComponent
-          position="top-right"
-          expandable={true}
-          expandProperties={{
-            expandTooltip: "Search",
-            expandIconClass: "esri-icon-search"
-          }}
-        >
-          <Widget type="esri/widgets/Search" />
-        </MapComponent>
-        <MapComponent
-          position="top-right"
-          expandable={true}
-          expandProperties={{
-            expandTooltip: "Basemap Gallery",
-            expandIconClass: "esri-icon-basemap"
-          }}
-        >
-          <Widget type="esri/widgets/BasemapGallery" />
-        </MapComponent>
-        <MapComponent position="manual" style={{ left: "59px", top: "15px" }}>
-          {/* <MapContext.Consumer>
-            {(context) => {
-              return (
-                <button className="map-ui-btn" onClick={console.log(context)}>
-                  &hearts;
-                </button>
-              );
-            }}
-          </MapContext.Consumer> */}
-        </MapComponent>
-        <MapComponent
-          position="top-right"
-          expandable={true}
-          expandProperties={{
-            expandTooltip: "Print",
-            expandIconClass: "esri-icon-printer"
-          }}
-        >
-          <Widget
-            type="esri/widgets/Print"
-            widgetProperties={{ printServiceUrl: options.printServiceUrl }}
-          />
-        </MapComponent>
+        <SketchLayer />
+        <Search />
+        <BasemapSelector />
+        <MapContextButton isHidden={true} />} />
+        <Print />
       </Map>
     </div>
   );
