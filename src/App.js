@@ -1,11 +1,10 @@
 import React from "react";
 import { setDefaultOptions } from "esri-loader";
+import "./styles.css";
 import { MapComponent, Widget } from "./Widget/Widgets";
 import { Map, MapContext } from "./Map";
 import { GraphicsLayer } from "./Layers";
 import { options } from "./config";
-
-import "./styles.css";
 setDefaultOptions({ css: true });
 
 export default function App() {
@@ -16,6 +15,16 @@ export default function App() {
 
         <MapComponent position="top-right">
           <Widget type="esri/widgets/Sketch" layer="sketchLayer" />
+        </MapComponent>
+        <MapComponent
+          position="top-right"
+          expandable={true}
+          expandProperties={{
+            expandTooltip: "Search",
+            expandIconClass: "esri-icon-search"
+          }}
+        >
+          <Widget type="esri/widgets/Search" />
         </MapComponent>
         <MapComponent
           position="top-right"
