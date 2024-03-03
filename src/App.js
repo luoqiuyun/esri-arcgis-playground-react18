@@ -1,8 +1,9 @@
 import React from "react";
+import { setDefaultOptions } from "esri-loader";
+import { MapComponent, Widget } from "./Widget/Widgets";
 import { Map, MapContext } from "./Map";
 import { GraphicsLayer } from "./Layers";
-import { MapComponent, Widget } from "./Widget/Widgets";
-import { setDefaultOptions } from "esri-loader";
+import { options } from "./config";
 
 import "./styles.css";
 setDefaultOptions({ css: true });
@@ -45,6 +46,10 @@ export default function App() {
             expandIconClass: "esri-icon-printer"
           }}
         >
+          <Widget
+            type="esri/widgets/Print"
+            widgetProperties={{ printServiceUrl: options.printServiceUrl }}
+          />
         </MapComponent>
       </Map>
     </div>
