@@ -1,6 +1,6 @@
 import React from "react";
 import { MapComponent, Widget } from "../Widget/Widgets";
-import { options } from "../config";
+import { options } from "./config";
 
 const Print = () => {
 
