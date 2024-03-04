@@ -1,7 +1,13 @@
 import React from "react";
-import { Map as EsriMap } from "@esri/react-arcgis";
-import { CommonProperties, MapProperties, MapState } from "./types";
+import { WebMap as EsriWebMap } from "@esri/react-arcgis";
 import { loadTypedModules, MapChild } from "../utilities/GIS";
+import DOMContainer from "../utilities/DOMContainer";
+import {
+  CommonProperties,
+  MapProperties,
+  WebMapProperties,
+  MapState
+} from "./types";
 
 function mapNeedsInit(props: CommonProperties) {
   return !!props.portalUrl || !!props.tokenFetchers;
@@ -32,6 +38,14 @@ const _contexts = new window.Map<
   string,
   { context?: MapChild; resolve: (context: MapChild) => void }
 >();
+export function getContext(mapId: string) {
+  const context = _contexts.get(mapId);
+  if (!context) {
+    return new Promise<MapChild>((resolve) => {
+      _contexts.set(mapId, { resolve });
+    });
+  } else return Promise.resolve(context.context!);
+}
 
 function addContext(mapId: string, context: MapChild) {
   const existing = _contexts.get(mapId);
@@ -41,10 +55,10 @@ function addContext(mapId: string, context: MapChild) {
   } else _contexts.set(mapId, { context, resolve: () => context });
 }
 
-export class Map extends React.Component<MapProperties, MapState> {
-  
-  public constructor(props: MapProperties) {
+export class WebMap extends React.Component<WebMapProperties, MapState> {
+  public constructor(props: WebMapProperties) {
     super(props);
+
     this.state = {
       mapReady: !mapNeedsInit(props)
     };
@@ -52,13 +66,14 @@ export class Map extends React.Component<MapProperties, MapState> {
 
   public async componentDidMount() {
     if (this.state.mapReady) return;
+
     await initMap(this.props);
     this.setState({ mapReady: true });
   }
 
   private onLoad(map: __esri.Map, view: __esri.MapView | __esri.SceneView) {
     addContext(this.props.id, { map, view });
-    if (this.props.onLoad) this.props.onLoad(map, view);
+    if (this.props.onLoad) this.props.onLoad(map as __esri.WebMap, view);
     this.setState({ context: { map, view } });
   }
 
@@ -68,10 +83,10 @@ export class Map extends React.Component<MapProperties, MapState> {
 
   public render() {
     return this.state.mapReady ? (
-      <EsriMap
+      <EsriWebMap
+        id={this.props.portalId}
         onLoad={this.onLoad.bind(this)}
         onFail={this.onFail.bind(this)}
-        mapProperties={{ basemap: "streets-vector" }}
         viewProperties={{center: [-122, 37.6], zoom: 9}}
       >
         {this.state.context ? (
@@ -79,7 +94,7 @@ export class Map extends React.Component<MapProperties, MapState> {
             {this.props.children}
           </MapContext.Provider>
         ) : null}
-      </EsriMap>
+      </EsriWebMap>
     ) : (
       <p>Loading...</p>
     );

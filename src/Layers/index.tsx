@@ -8,11 +8,6 @@ interface LayerQueueItem {
   ready: boolean;
 }
 
-// Because the layers load asynchronously, it's unpredictable when map.add() gets called normally.
-// This solves that problem by adding the layers to a queue as they are initialized by React,
-// and once they have all finished loading, THEN we add them to the map in the order they
-// are initialized by React. This makes it possible to control their order by how
-// you order them as components inside of a map.
 let layerQueue: LayerQueueItem[] = [];
 function queueLayer(map: __esri.Map, getLayer: () => __esri.Layer) {
   const record = { map, getLayer, ready: false };
@@ -25,38 +20,6 @@ function queueLayer(map: __esri.Map, getLayer: () => __esri.Layer) {
     }
   };
 }
-
-// TODO: I don't think this is going to work like the Widgets.
-// The different layer types are too different I think for this to be
-// feasible. Need to create a component for each layer type I wish to support I think.
-// interface LayerProperties<T extends LayerConstructorKeys> {
-//     type: T;
-//     url: string;
-//     layerProperties?: Optional<Remove<LayerPropertiesTypeMap[T], 'view' | 'map' | 'url'>>;
-//     view?: __esri.View;
-//     map?: __esri.Map;
-//     init?: (layer: InstancePicker<EsriTypeMap[T]>) => void;
-// }
-// export function Layer<T extends LayerConstructorKeys>(props: LayerProperties<T>) {
-//     React.useEffect(() => {
-//         let layer: __esri.Layer | undefined;
-//         const onReady = queueLayer(props.map!, () => layer!);
-//         (async function () {
-//             const [ LayerConstructor ] = await loadTypedModules(props.type);
-//             const layerProperties = { url: props.url, ...props.layerProperties } as __esri.LayerProperties;
-
-//             layer = new LayerConstructor(layerProperties);
-//             if (props.init) props.init(layer as InstancePicker<EsriTypeMap[T]>);
-//             onReady();
-//         })();
-
-//         return function cleanup() {
-//             if (layer) props.map?.remove(layer);
-//         }
-//     });
-
-//     return null;
-// }
 
 interface FeatureLayerProperties {
   url: string;

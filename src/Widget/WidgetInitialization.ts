@@ -1,9 +1,5 @@
+import { ConstructorInstance, Diff, FirstConstructorArgument } from "../utilities/Types";
 import { EsriTypeMap, loadTypedModules, MapChild } from "../utilities/GIS";
-import {
-  ConstructorInstance,
-  Diff,
-  FirstConstructorArgument
-} from "../utilities/Types";
 import { GenericWidgetConstructorKeys, WidgetProperties } from "./WidgetTypes";
 
 export async function loadWidget<T extends GenericWidgetConstructorKeys>(
