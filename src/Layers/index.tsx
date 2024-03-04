@@ -1,6 +1,6 @@
 import React from "react";
-import { MapContext } from "./Map";
-import { loadTypedModules } from "./utilities/GIS";
+import { loadTypedModules } from "../utilities/GIS";
+import { MapContext } from "../Map";
 
 interface LayerQueueItem {
   map: __esri.Map;

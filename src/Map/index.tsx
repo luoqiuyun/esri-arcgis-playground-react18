@@ -1,8 +1,8 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
-import { loadTypedModules, MapChild } from "./utilities/GIS";
 import { Map as EsriMap, WebMap as EsriWebMap } from "@esri/react-arcgis";
-import DOMContainer from "./utilities/DOMContainer";
+import { loadTypedModules, MapChild } from "../utilities/GIS";
+import DOMContainer from "../utilities/DOMContainer";
 
 interface CommonProperties {
   portalUrl?: string;
@@ -107,6 +107,7 @@ export class Map extends React.Component<MapProperties, MapState> {
       <EsriMap
         onLoad={this.onLoad.bind(this)}
         onFail={this.onFail.bind(this)}
+        mapProperties={{ basemap: "streets-vector" }}
         viewProperties={{center: [-122, 37.6], zoom: 9}}
       >
         {this.state.context ? (
