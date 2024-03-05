@@ -1,5 +1,5 @@
 import React from "react";
-import { CommonProperties } from "./types";
+import { CommonProperties } from "../types";
 import { loadTypedModules, MapChild } from "../utilities/GIS";
 
 export function mapNeedsInit(props: CommonProperties) {

@@ -7,7 +7,7 @@ import {
   MapProperties,
   WebMapProperties,
   MapState
-} from "./types";
+} from "../types";
 
 function mapNeedsInit(props: CommonProperties) {
   return !!props.portalUrl || !!props.tokenFetchers;

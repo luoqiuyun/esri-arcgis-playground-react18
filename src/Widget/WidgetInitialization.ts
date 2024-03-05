@@ -1,4 +1,4 @@
-import { ConstructorInstance, Diff, FirstConstructorArgument } from "../utilities/Types";
+import { ConstructorInstance, Diff, FirstConstructorArgument } from "../types";
 import { EsriTypeMap, loadTypedModules, MapChild } from "../utilities/GIS";
 import { GenericWidgetConstructorKeys, WidgetProperties } from "./WidgetTypes";
 

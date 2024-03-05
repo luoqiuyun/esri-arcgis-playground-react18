@@ -6,7 +6,7 @@ import {
   FirstConstructorArgument,
   Optional,
   Remove
-} from "../utilities/Types";
+} from "../types";
 
 export type WidgetConstructorKeys = {
   [T in keyof EsriTypeMap]: EsriTypeMap[T] extends {

@@ -6,7 +6,7 @@ import DOMContainer from "../utilities/DOMContainer";
 import {
   MapProviderProperties,
   MapProviderState,
-} from "./types";
+} from "../types";
 
 export const MapContext = React.createContext<MapChild>({
   map: {} as __esri.Map,

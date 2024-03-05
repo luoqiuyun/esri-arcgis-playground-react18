@@ -1,6 +1,6 @@
 import React from "react";
 import { Map as EsriMap } from "@esri/react-arcgis";
-import { CommonProperties, MapProperties, MapState } from "./types";
+import { CommonProperties, MapProperties, MapState } from "../types";
 import { loadTypedModules, MapChild } from "../utilities/GIS";
 import {
   mapNeedsInit,
