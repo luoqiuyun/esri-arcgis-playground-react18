@@ -1,5 +1,5 @@
 import React from "react";
-import { MapContext } from "../Map";
+import { MapContext } from "../Map/helpers";
 import { MapComponent } from "../Widget/Widgets";
 
 const MapContextButton = ({isHidden}) => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
-import { MapContext } from "../Map";
+import { MapContext } from "../Map/helpers";
 import DOMContainer from "../utilities/DOMContainer";
 import { loadTypedModules } from "../utilities/GIS";
 import { loadWidget } from "./WidgetInitialization";
